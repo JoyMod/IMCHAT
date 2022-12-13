@@ -1,0 +1,107 @@
+info:
+  contact: {}
+paths:
+  /index:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      tags:
+      - 首页
+  /user/createUser:
+    get:
+      parameters:
+      - description: 用户名
+        in: query
+        name: name
+        type: string
+      - description: 密码
+        in: query
+        name: password
+        type: string
+      - description: 重复密码
+        in: query
+        name: repassword
+        type: string
+      - description: 电话号码
+        in: query
+        name: phone
+        type: string
+      - description: 电子邮件
+        in: query
+        name: email
+        type: string
+      responses:
+        "200":
+          description: code,"message"}
+          schema:
+            type: string
+      summary: 新增用户
+      tags:
+      - 新增用户
+  /user/deleteUser:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: name
+        type: string
+      responses: {}
+      summary: 删除用户
+      tags:
+      - 新增用户
+  /user/findUserByNameAndPwd:
+    post:
+      parameters:
+      - description: 用户名
+        in: formData
+        name: name
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        type: string
+      responses: {}
+      summary: 登录验证
+      tags:
+      - 新增用户
+  /user/getUserList:
+    get:
+      responses:
+        "200":
+          description: code,"message"}
+          schema:
+            type: string
+      summary: 所有用户
+      tags:
+      - 基础查询
+  /user/updateUser:
+    post:
+      parameters:
+      - description: id
+        in: formData
+        name: id
+        type: string
+      - description: name
+        in: formData
+        name: name
+        type: string
+      - description: password
+        in: formData
+        name: password
+        type: string
+      - description: phone
+        in: formData
+        name: phone
+        type: string
+      - description: email
+        in: formData
+        name: email
+        type: string
+      responses: {}
+      summary: 修改用户
+      tags:
+      - 新增用户
+swagger: "2.0"
